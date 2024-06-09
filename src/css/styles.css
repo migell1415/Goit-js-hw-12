@@ -1,25 +1,147 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
+@import"https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:wght@300;400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=block";
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
   color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background-color: rgb(242, 245, 245);
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 36px 0;
+}
+
+.form input {
+  color: #808080;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  width: 272px;
+  height: 40px;
+  padding-left: 16px;
+}
+
+.form input:hover {
+  border: 1px solid #000;
+}
+
+.form input:focus {
+  color: #2E2F42;
+  border: 1px solid #4E75FF;
+  outline: none;
+}
+
+button {
+  margin-left: 8px;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #4E75FF;
+}
+
+button:hover {
+  background-color: #6C8CFF;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 20px;
+  gap: 24px;
+}
+
+.image-card {
+  width: calc(100% / 3 - 10px * 2);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image-card:hover,
+.image-card:focus {
+  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
+}
+
+.image-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5px;
+}
+
+.label {
+  color: #2E2F42;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+}
+
+.value {
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+.load-btn {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
